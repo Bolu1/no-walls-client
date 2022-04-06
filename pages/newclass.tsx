@@ -76,24 +76,24 @@ const Newquestion = () => {
   }
 
   return (
-    <div className="dark:bg-gray-900 dark:text-coolGray-100">
+    <div className="bg-gray-900 text-coolGray-100">
       <Layout title="New Class">
-        <section className="w-full max-w-2xl px-6 py-4 mx-auto bg-white rounded-md shadow-md dark:bg-gray-800">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 dark:text-white">
+        <section className="w-full max-w-2xl px-6 py-4 mx-auto bg-white rounded-md shadow-md bg-gray-800">
+          <h2 className="text-3xl font-semibold text-center text-gray-800 text-white">
             Create a new Class
           </h2>
 
           <form className="mt-6 " onSubmit={(e)=>submitHandler(e)}>
             <div className="items-center -mx-2 md:flex">
               <div className="w-full mx-2 mt-4 md:mt-0">
-                <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm font-medium text-gray-600 text-gray-200">
                   Name
                 </label>
 
                 <input
                   onChange={(e) => setname(e.target.value)}
                   value={name}
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   type="text"
                   required
                   placeholder="Name"
@@ -103,14 +103,14 @@ const Newquestion = () => {
 
             <div className="items-center mt-4 -mx-2 md:flex">
               <div className="w-full mx-2 mt-4 md:mt-0">
-                <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm font-medium text-gray-600 text-gray-200">
                   Password
                 </label>
 
                 <input
                   onChange={(e) => setpassword(e.target.value)}
                   value={password}
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   type="password"
                   required
                   placeholder="Password"
@@ -120,14 +120,14 @@ const Newquestion = () => {
 
             <div className="items-center mt-4 -mx-2 md:flex">
               <div className="w-full mx-2 mt-4 md:mt-0">
-                <label className="block mb-2 text-sm font-medium text-gray-600 dark:text-gray-200">
+                <label className="block mb-2 text-sm font-medium text-gray-600 text-gray-200">
                   Class Information
                 </label>
 
                 <input
                   onChange={(e) => setInfo(e.target.value)}
                   value={info}
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 focus:ring-blue-300 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                   type="text"
                   required
                   placeholder="Class Information"
@@ -135,12 +135,12 @@ const Newquestion = () => {
               </div>
             </div>
 
-            <fieldset className="w-full space-y-1  pt-4 dark:text-coolGray-100">
+            <fieldset className="w-full space-y-1  pt-4 text-coolGray-100">
                 <label  className="block text-sm text-white font-medium">
                   Upload Profile Photo
                 </label>
-                <div className="flex text-white px-8 py-12 border-2 border-dashed rounded-md dark:border-coolGray-700 dark:text-coolGray-400 dark:bg-coolGray-800">
-                  {/* <input type="file" name="files" id="files" className="px-8 py-12 border-2 border-dashed rounded-md dark:border-coolGray-700 dark:text-coolGray-400 dark:bg-coolGray-800"/> */}
+                <div className="flex text-white px-8 py-12 border-2 border-dashed rounded-md border-coolGray-700 text-coolGray-400 bg-coolGray-800">
+                  {/* <input type="file" name="files" id="files" className="px-8 py-12 border-2 border-dashed rounded-md border-coolGray-700 text-coolGray-400 bg-coolGray-800"/> */}
                   <FileBase
                     type="file"
                     multiple={false}
@@ -159,7 +159,7 @@ const Newquestion = () => {
                     </button>:
 
                       <div className="flex justify-center ">
-                      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+                      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-400"></div>
                       </div>
                         }
             </div>

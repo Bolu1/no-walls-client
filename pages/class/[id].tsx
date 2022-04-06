@@ -164,33 +164,33 @@ export default function Home(props){
       <div style={{minHeight:"90vh"}} className="bg-gray-900">
       {!data ?
       <div className="flex justify-center pt-60">
-        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin  border-violet-400"></div>
         </div>
      :
      <div>
-    <div className="max-w-5xl  mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div className="max-w-5xl  mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md  bg-gray-800">
         <img className="object-cover w-full h-64" src={profile} alt="Article"/>
         <div style={{position: "absolute", top: "33%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-3xl font-semibold text-center text-gray-800 ">{data.name}</div>
         <div style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-xl font-semibold text-center text-gray-600 ">{data.info}</div>
     </div>
-        <div  className="max-w-3xl my-4 mx-5 md:mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md dark:bg-gray-800">
+        <div  className="max-w-3xl my-4 mx-5 md:mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md  bg-gray-800">
         {!share?
-        <div className="flex items-center p-6  space-x-4 rounded-md dark:bg-gray-800 dark:text-white">
+        <div className="flex items-center p-6  space-x-4 rounded-md  bg-gray-800  text-white">
         <div className="flex items-center self-stretch justify-center">
           <div className="relative flex-shrink-0 px-2">
-                        <img src={uprofile} alt="" className="w-12 h-12 border rounded-full dark:bg-coolGray-500 dark:border-coolGray-700"/>
+                        <img src={uprofile} alt="" className="w-12 h-12 border rounded-full  bg-coolGray-500  border-coolGray-700"/>
                       </div>
         </div>
         <span className="text-gray-200  cursor-pointer hover:text-blue-600" onClick={()=>{setShare(!share)}}>Click here to post something to the class</span>
       </div>:
 
-       <div className="flex items-center p-6 mx-5 md:mx-auto space-x-4 rounded-md dark:bg-gray-800 dark:text-white">
+       <div className="flex items-center p-6 mx-5 md:mx-auto space-x-4 rounded-md  bg-gray-800  text-white">
        <div className="w-full mt-4">
                 <textarea
                 value={message}
                 onChange={(e)=>setMessage(e.target.value)}
-                 className="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-md dark:bg-gray-800 dark:text-gray-300 dark:border-gray-600 focus:border-blue-400 dark:focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"></textarea>
-                <fieldset className="w-full mx-auto space-y-1 dark:text-coolGray-100">
+                 className="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-md  bg-gray-800  text-gray-300  border-gray-600 focus:border-blue-400  focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"></textarea>
+                <fieldset className="w-full mx-auto space-y-1  text-coolGray-100">
                   
                   <div  style={{ marginLeft: "35%"}} className="flex mx-auto">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-5" viewBox="0 0 20 20" fill="currentColor">
@@ -223,11 +223,11 @@ export default function Home(props){
       <div  className="max-w-3xl space-y-4 mx-5 md:mx-auto overflow-hidden   ">
       
       {posts && posts.map(p =>(
-      <div key={p.posts} className="  p-6 my-4 margin-bg-white space-x-4 rounded-md dark:bg-gray-800 dark:text-white">
+      <div key={p.posts} className="  p-6 my-4 margin-bg-white space-x-4 rounded-md  bg-gray-800  text-white">
         <div className="flex  items-center  margin-bg-white space-x-4">
         <div className="flex items-center self-stretch justify-center">
         <div className="relative flex-shrink-0 px-2">
-                        <img src={p.user.profile} alt="" className="w-12 h-12 border rounded-full dark:bg-coolGray-500 dark:border-coolGray-700"/>
+                        <img src={p.user.profile} alt="" className="w-12 h-12 border rounded-full  bg-coolGray-500  border-coolGray-700"/>
                       </div>
         </div>
         <span className="text-white  cursor-pointer hover:text-blue-600" >{p.user.name}</span>
@@ -242,7 +242,7 @@ export default function Home(props){
       </div>
       {!loading && posts[0] &&
       <div className="flex justify-center py-12">
-      <div className="inline-flex items-center mx-auto rounded dark:bg-gray-800 dark:text-white ">
+      <div className="inline-flex items-center mx-auto rounded  bg-gray-800  text-white ">
         <button type="button" onClick={morePostHandler} className="px-4 py-3">More posts</button>
         <button type="button" title="Toggle dropdown" className="p-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
@@ -253,7 +253,7 @@ export default function Home(props){
       </div> }
       {loading &&
       <div className="flex justify-center py-12">
-        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin  border-violet-400"></div>
         </div>}
     </div>
     

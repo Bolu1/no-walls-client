@@ -88,36 +88,36 @@ const Home = () => {
       <div style={{minHeight:"90vh"}} className="bg-gray-900 px-5">
         {empty && 
 
-        <h2 className="text-4xl pt-60 font-bold text-center text-gray-700 dark:text-white">
+        <h2 className="text-4xl pt-60 font-bold text-center text-gray-700  text-white">
                    You do not have any classes yet 
                   </h2>
                   
                   }
       {loading ?
       <div className="flex justify-center pt-60">
-        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+        <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin  border-violet-400"></div>
         </div>
      :
      <div className="grid grid-cols-2 px-3 py-4 gap-y-10 sm:grid-cols-1 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {/* card */}
       { data && data.map((d)=>(
-    <div key={d._id} onClick={() =>router.push(`/class/${d._id}`)} className="max-w-sm overflow-hidden cursor-pointer hover:shadow-2xl bg-white rounded-lg shadow-md dark:bg-gray-800">
+    <div key={d._id} onClick={() =>router.push(`/class/${d._id}`)} className="max-w-sm overflow-hidden cursor-pointer hover:shadow-2xl bg-white rounded-lg shadow-md  bg-gray-800">
         <img className="object-cover w-full h-40" src={d.profile} alt="Article"/>
 
         <div className="p-6">
             <div>
-                <span className="text-xs font-medium text-blue-600 uppercase dark:text-blue-400">Class</span>
-                <a  className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-200 transform dark:text-white ">{d.name}</a>
-                <p className="mt-2 text-sm text-gray-600 dark:text-gray-400">{d.info}</p>
+                <span className="text-xs font-medium text-blue-600 uppercase  text-blue-400">Class</span>
+                <a  className="block mt-2 text-2xl font-semibold text-gray-800 transition-colors duration-200 transform  text-white ">{d.name}</a>
+                <p className="mt-2 text-sm text-gray-600  text-gray-400">{d.info}</p>
             </div>
 
             <div className="mt-4">
                 <div className="flex items-center">
                     <div className="flex items-center">
                         <img className="object-cover h-10 rounded-full" src={d.teacher.profile} alt="Avatar"/>
-                        <a href="#" className="mx-2 font-semibold text-gray-700 dark:text-gray-200">{d.teacher.name}</a>
+                        <a href="#" className="mx-2 font-semibold text-gray-700  text-gray-200">{d.teacher.name}</a>
                     </div>
-                    <span className="mx-1 text-xs text-gray-600 dark:text-gray-300">{getDate(d.createdAt)}</span>
+                    <span className="mx-1 text-xs text-gray-600  text-gray-300">{getDate(d.createdAt)}</span>
                 </div>
             </div>
         </div>

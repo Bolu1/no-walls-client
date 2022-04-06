@@ -141,7 +141,7 @@ const Layout = ({ children, title }) => {
         <title>{title?`${title}-HeyPI`: "HeyPi"} </title>
       </Head>
 
-      <Popover className="relative bg-white dark:bg-gray-900">
+      <Popover className="relative  bg-gray-900">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="flex justify-between items-center py-6 md:justify-start md:space-x-10">
             <div className="flex justify-start lg:w-0 lg:flex-1">
@@ -151,7 +151,7 @@ const Layout = ({ children, title }) => {
               </Link>
             </div>
             <div className="-mr-2 -my-2 md:hidden">
-              <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center  dark:bg-gray-800 justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+              <Popover.Button className="bg-white rounded-md p-2 inline-flex items-center   bg-gray-800 justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                 <span className="sr-only">Open menu</span>
                 <MenuIcon className="h-6 w-6" aria-hidden="true" />
               </Popover.Button>
@@ -159,21 +159,21 @@ const Layout = ({ children, title }) => {
             <Popover.Group as="nav" className="hidden md:flex space-x-10">
               
             <Link href="/home" passHref>
-                <p className="text-base font-medium cursor-pointer dark:text-gray-300 text-gray-500 hover:text-gray-900">Classes</p>
+                <p className="text-base font-medium cursor-pointer  text-gray-300 text-gray-500 hover:text-gray-900">Classes</p>
                
               </Link>
 
               <Link href="/calendar" passHref>
-              <p className="text-base font-medium cursor-pointer dark:text-gray-300 text-gray-500 hover:text-gray-900">Calendar</p>
+              <p className="text-base font-medium cursor-pointer  text-gray-300 text-gray-500 hover:text-gray-900">Calendar</p>
               </Link>
 
               <Link href="/joinclass" passHref>
-              <p className="text-base font-medium cursor-pointer dark:text-gray-300 text-gray-500 hover:text-gray-900">Join Class</p>
+              <p className="text-base font-medium cursor-pointer  text-gray-300 text-gray-500 hover:text-gray-900">Join Class</p>
                
               </Link>
 
               <Link href="/newclass" passHref>
-              <p className="text-base font-medium cursor-pointer dark:text-gray-300 text-gray-500 hover:text-gray-900">New Class</p>
+              <p className="text-base font-medium cursor-pointer  text-gray-300 text-gray-500 hover:text-gray-900">New Class</p>
                
               </Link>
 
@@ -198,7 +198,7 @@ const Layout = ({ children, title }) => {
                     >
                       
                       <div className="relative flex-shrink-0 px-2">
-                        <img src={profile} alt="" className="w-12 h-12 border rounded-full dark:bg-coolGray-500 dark:border-coolGray-700"/>
+                        <img src={profile} alt="" className="w-12 h-12 border rounded-full  bg-coolGray-500  border-coolGray-700"/>
                       </div>
                       <h4 className="text-white">{name}</h4>
                     </Popover.Button>
@@ -216,22 +216,20 @@ const Layout = ({ children, title }) => {
                         <div className="rounded-lg text-center shadow-lg ring-1 ring-black ring-opacity-5 overflow-hidden">
                           <div className="relative text-center grid gap-1 bg-gray-800 py-1 sm:gap-4 sm:p-4">
                           
-                          <Link href="/myapi" passHref>
+                          <Link href="/editprofile" passHref>
                                       <p className="text-base text-center rounded-lg cursor-pointer text-white hover:bg-gray-900">
                                       Edit Profile
                                    </p>
                               </Link>
                               
-                              <Link href="/myapi" passHref>
+                              <Link href="/myclasses" passHref>
                                       <p className="text-base text-center rounded-lg cursor-pointer text-white hover:bg-gray-900">
-                                      Edit Profile
+                                      My Classes
                                    </p>
                               </Link>
-                              <Link href="/myapi" passHref>
-                                      <p style={{color:"red"}} onClick={logoutHandler} className="text-base cursor-pointer rounded-lg text-center text-red-500 hover:bg-gray-900">
-                                      Logout
-                                   </p>
-                              </Link>
+                                <p style={{color:"red"}} onClick={logoutHandler} className="text-base cursor-pointer rounded-lg text-center text-red-500 hover:bg-gray-900">
+                                Logout
+                              </p>
                           </div>
                         </div>
                       </Popover.Panel>
@@ -260,16 +258,16 @@ const Layout = ({ children, title }) => {
         >
           <Popover.Panel
             focus
-            className="relative  top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden  dark:bg-gray-900"
+            className="relative  top-0 inset-x-0 p-2 transition transform origin-top-right md:hidden   bg-gray-900"
           >
-            <div className="rounded-lg shadow-lg ring-1  dark:bg-gray-900 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
+            <div className="rounded-lg shadow-lg ring-1   bg-gray-900 ring-black ring-opacity-5 bg-white divide-y-2 divide-gray-50">
               <div className="pt-5 pb-6 px-5">
                 <div className="flex items-center justify-between">
                   <div>
                     
                   </div>
                   <div className="-mr-2">
-                    <Popover.Button className="bg-white  dark:bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
+                    <Popover.Button className="bg-white   bg-gray-800 rounded-md p-2 inline-flex items-center justify-center text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
                       <span className="sr-only">Close menu</span>
                       <XIcon className="h-6 w-6" aria-hidden="true" />
                     </Popover.Button>
@@ -281,13 +279,13 @@ const Layout = ({ children, title }) => {
                       <a
                         key={item.name}
                         href={item.href}
-                        className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50 dark:text-gray-300"
+                        className="-m-3 p-3 flex items-center rounded-md hover:bg-gray-50  text-gray-300"
                       >
                         {/* <div className="flex-shrink-0 h-6 w-6 text-indigo-600"
                           aria-hidden="true">
                             {item.icon}
                         </div> */}
-                        <span className="ml-3 text-base font-medium text-gray-900 dark:text-gray-300">
+                        <span className="ml-3 text-base font-medium text-gray-900  text-gray-300">
                           {item.name}
                         </span>
                         
@@ -318,16 +316,16 @@ const Layout = ({ children, title }) => {
               </div>): 
                   <div className="py-4 px-4 space-x-4 flex">
                         <div className="relative flex-shrink-0 px-2">
-                        <img src={profile} alt="" className="w-12 h-12 border rounded-full dark:bg-coolGray-500 dark:border-coolGray-700"/>
+                        <img src={profile} alt="" className="w-12 h-12 border rounded-full  bg-coolGray-500  border-coolGray-700"/>
                       </div>
                         <h1 className="font-medium py-3 px-4 cursor-pointer  text-gray-100">{name}</h1>
 
-                <Link href="" passHref>
-                        <h1 className="font-medium py-3 px-4 cursor-pointer  dark:text-gray-300">Edit Profile</h1>
+                <Link href="/editprofile" passHref>
+                        <h1 className="font-medium py-3 px-4 cursor-pointer   text-gray-300">Edit Profile</h1>
                       </Link>
 
-                      <Link href="i" passHref>
-                        <h1 className="font-medium py-3 px-4 cursor-pointer dark:text-gray-300">My Classes</h1>
+                      <Link href="/myclasses" passHref>
+                        <h1 className="font-medium py-3 px-4 cursor-pointer  text-gray-300">My Classes</h1>
                       </Link>
 
                       <div 
@@ -348,13 +346,13 @@ const Layout = ({ children, title }) => {
       <div style={{minHeight:"90vh"}}>
         {children}
         </div>
-      <footer className="flex flex-col items-center justify-between px-6 py-4 bg-white dark:bg-gray-800 sm:flex-row">
-            <a href="#" className="text-xl font-bold text-gray-800 dark:text-white hover:text-gray-700 dark:hover:text-gray-300">Brand</a>
+      <footer className="flex flex-col items-center justify-between px-6 py-4 bg-white  bg-gray-800 sm:flex-row">
+            <a href="#" className="text-xl font-bold text-gray-800  text-white hover:text-gray-700  hover:text-gray-300">Brand</a>
             
-            <p className="py-2 text-gray-800 dark:text-white sm:py-0">All rights reserved</p>
+            <p className="py-2 text-gray-800  text-white sm:py-0">All rights reserved</p>
 
             <div className="flex -mx-2">
-                <a href="#" className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Reddit">
+                <a href="#" className="mx-2 text-gray-600  text-gray-300 hover:text-gray-500  hover:text-gray-300" aria-label="Reddit">
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -363,7 +361,7 @@ const Layout = ({ children, title }) => {
                     </svg>
                 </a>
 
-                <a href="#" className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300"
+                <a href="#" className="mx-2 text-gray-600  text-gray-300 hover:text-gray-500  hover:text-gray-300"
                     aria-label="Facebook">
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
@@ -373,7 +371,7 @@ const Layout = ({ children, title }) => {
                     </svg>
                 </a>
 
-                <a href="#" className="mx-2 text-gray-600 dark:text-gray-300 hover:text-gray-500 dark:hover:text-gray-300" aria-label="Github">
+                <a href="#" className="mx-2 text-gray-600  text-gray-300 hover:text-gray-500  hover:text-gray-300" aria-label="Github">
                     <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" fill="none"
                         xmlns="http://www.w3.org/2000/svg">
                         <path

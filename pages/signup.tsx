@@ -75,24 +75,24 @@ const SignUp: NextPage = () => {
   } 
 
   return (
-    <div className="bg-white dark:bg-gray-900">
+    <div className=" bg-gray-900">
           <div className="flex justify-center h-screen">
             
 
             <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
               <div className="flex-1">
                 <div className="text-center">
-                  <h2 className="text-4xl font-bold text-center text-gray-700 dark:text-white">
+                  <h2 className="text-4xl font-bold text-center text-gray-700  text-white">
                    Create an account to use <span className="text-blue-400">No walls</span>
                   </h2>
                   {message == "Auth successsful" && (
-                    <p className="mt-3 text-green-600 dark:text-green-600">
+                    <p className="mt-3 text-green-600  text-green-600">
                       {message}
                     </p>
                   )}
 
                   {message && message != "Auth successsful" && (
-                    <p className="mt-3 text-red-600 dark:text-red-600">
+                    <p className="mt-3 text-red-600  text-red-600">
                       {message}
                     </p>
                   )}
@@ -101,7 +101,7 @@ const SignUp: NextPage = () => {
                 <div className="mt-8">
                   <form onSubmit={(e)=>registerHandler(e)}>
                     <div>
-                      <label className="block mb-2 text-sm text-gray-600 dark:text-gray-200">
+                      <label className="block mb-2 text-sm text-gray-600  text-gray-200">
                         Email
                       </label>
                       <input
@@ -111,13 +111,13 @@ const SignUp: NextPage = () => {
                         type="email"
                         id="name"
                         placeholder="Email"
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400  border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400  border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                     </div>
 
                     <div className="mt-6">
                       <div className="flex justify-between mb-2">
-                        <label className="text-sm text-gray-600 dark:text-gray-200">
+                        <label className="text-sm text-gray-600  text-gray-200">
                           Name
                         </label>
                       </div>
@@ -129,13 +129,13 @@ const SignUp: NextPage = () => {
                         onChange={(e) => setName(e.target.value)}
                         type="text"
                         placeholder="Name"
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                     </div>
 
                     <div className="mt-6">
                       <div className="flex justify-between mb-2">
-                        <label className="text-sm text-gray-600 dark:text-gray-200">
+                        <label className="text-sm text-gray-600  text-gray-200">
                           Password
                         </label>
                       </div>
@@ -149,13 +149,13 @@ const SignUp: NextPage = () => {
                         name="password"
                         id="password"
                         placeholder="Passsword"
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                     </div>
 
                     <div className="mt-6">
                       <div className="flex justify-between mb-2">
-                        <label className="text-sm text-gray-600 dark:text-gray-200">
+                        <label className="text-sm text-gray-600  text-gray-200">
                           Confirm Password
                         </label>
                       </div>
@@ -168,7 +168,7 @@ const SignUp: NextPage = () => {
                         name="password"
                         id="password"
                         placeholder="Confirm Password"
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md dark:placeholder-gray-600 dark:bg-gray-900 dark:text-gray-300 dark:border-gray-700 focus:border-blue-400 dark:focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 bg-white border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                     </div>
                     
@@ -182,7 +182,7 @@ const SignUp: NextPage = () => {
                       </button>:
 
                       <div className="flex justify-center ">
-                      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-violet-400"></div>
+                      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin  border-violet-400"></div>
                       </div>
                         }
 

@@ -78,8 +78,8 @@ const Newquestion = () => {
   return (
     <div className="bg-gray-900 text-coolGray-100">
       <Layout title="New Class">
-        <section className="w-full max-w-2xl px-6 py-4 mx-auto bg-white rounded-md shadow-md bg-gray-800">
-          <h2 className="text-3xl font-semibold text-center text-gray-800 text-white">
+        <section className="w-full max-w-2xl px-6 py-4 mx-auto rounded-md shadow-md bg-gray-800">
+          <h2 className="text-3xl font-semibold text-center text-white">
             Create a new Class
           </h2>
 
@@ -93,7 +93,7 @@ const Newquestion = () => {
                 <input
                   onChange={(e) => setname(e.target.value)}
                   value={name}
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-4 py-2 mt-2  placeholder-gray-400 border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   type="text"
                   required
                   placeholder="Name"
@@ -110,7 +110,7 @@ const Newquestion = () => {
                 <input
                   onChange={(e) => setpassword(e.target.value)}
                   value={password}
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-4 py-2 mt-2  placeholder-gray-400 border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   type="password"
                   required
                   placeholder="Password"
@@ -127,7 +127,7 @@ const Newquestion = () => {
                 <input
                   onChange={(e) => setInfo(e.target.value)}
                   value={info}
-                  className="block w-full px-4 py-2 text-gray-700 bg-white border rounded-md bg-gray-800 text-gray-300 border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:border-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+                  className="block w-full px-4 py-2 mt-2  placeholder-gray-400 border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                   type="text"
                   required
                   placeholder="Class Information"

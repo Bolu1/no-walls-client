@@ -42,7 +42,6 @@ const Home: NextPage = () => {
       }
       })
       const user = data.data.login
-      console.log(user)
       const store = {
         token: user.token,
         email: user.email,

@@ -11,6 +11,7 @@ export default function Home(props){
   const router = useRouter();
   const {id} = props
   const [loading, setLoading] = useState(true)
+  const [state, setState] = useState(1)
   const [message, setMessage] = useState("")
   const [image, setImage] = useState("")
   const [share, setShare] = useState(false)
@@ -22,7 +23,9 @@ export default function Home(props){
     profile: null,
     info: null,
     createdAt: null,
-    teacher: null
+    members: [],
+    teacher: {name:null,
+              profile: null}
   })
   const [uprofile, setuProfile] = useState("")
 
@@ -36,7 +39,8 @@ export default function Home(props){
      // const n = data.email.split("@")
      userInfo = data
   }
- 
+  
+  const arr = [1,2,3,4,5,6,7,8]
 
   useEffect(() =>{
     setLoading(true)
@@ -49,8 +53,13 @@ export default function Home(props){
             profile
             info
             createdAt
+            members{
+              name
+              profile
+            }
             teacher{
               name
+              profile
             }
           }
         }
@@ -63,6 +72,7 @@ export default function Home(props){
           posts(id: "${id}"){
             post
             media
+            createdAt
             user{
               name
               profile
@@ -72,7 +82,6 @@ export default function Home(props){
         `
       }
 
-      
     const get = async(): Promise<void> =>{
       const response = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody),
       {
@@ -90,11 +99,12 @@ export default function Home(props){
       })
       setPosts(response1.data.data.posts) 
       setData(response.data.data.getOneClass) 
+
       setProfile(response.data.data.getOneClass.profile)
     setLoading(false)
     }
     get()
-  },[setData])
+  },[setData, share])
 
   const onPost = async() =>{
     // i did not need to give it another name, but oh well
@@ -122,7 +132,7 @@ export default function Home(props){
         }
       })
     setShare(!share)
-    router.reload();
+    // router.reload();
   }
 
   const morePostHandler = async():Promise<void> =>{
@@ -133,8 +143,10 @@ export default function Home(props){
         posts(id: "${id}", page:${page}){
           post
           media
+          createdAt
           user{
             name
+            profile
           }
         }
       }
@@ -154,6 +166,15 @@ export default function Home(props){
 
   }
 
+  const type = (base:any) =>{
+
+    const first = base.split("/")
+    const second = first[0].split(":")
+    return second[1]
+  }
+
+
+
   const setI = (i) =>{
     //  console.log(i)
     setImage(i.base64)
@@ -161,6 +182,40 @@ export default function Home(props){
 
   return (
     <Layout title="classes">
+
+    
+      <div className="flex bg-gray-900 mx-auto justify-center py-4">
+        {state === 1 ?
+          <button className="h-10 px-4 py-2 -mb-px text-sm text-center text-blue-600 bg-transparent border-b-2 border-blue-500 sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none">
+              Posts
+          </button> :
+            <button onClick={()=>setState(1)} className="h-10 px-4 py-2 -mb-px text-sm text-center text-gray-700 bg-transparent border-b-2 border-transparent sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400">
+            Posts
+           </button>
+          }
+
+        {state === 2 ?
+          <button className="h-10 px-4 py-2 -mb-px text-sm text-center text-blue-600 bg-transparent border-b-2 border-blue-500 sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none">
+              People
+          </button> :
+            <button onClick={()=>setState(2)} className="h-10 px-4 py-2 -mb-px text-sm text-center text-gray-700 bg-transparent border-b-2 border-transparent sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400">
+            People
+           </button>
+          }
+
+        {state === 3 ?
+          <button className="h-10 px-4 py-2 -mb-px text-sm text-center text-blue-600 bg-transparent border-b-2 border-blue-500 sm:text-base dark:border-blue-400 dark:text-blue-300 whitespace-nowrap focus:outline-none">
+              Assignments
+          </button> :
+            <button onClick={()=>setState(3)} className="h-10 px-4 py-2 -mb-px text-sm text-center text-gray-700 bg-transparent border-b-2 border-transparent sm:text-base dark:text-white whitespace-nowrap cursor-base focus:outline-none hover:border-gray-400">
+            Asssignments
+           </button>
+          }
+      </div>
+
+      {/* first view */}
+
+      { state === 1 &&
       <div style={{minHeight:"90vh"}} className="bg-gray-900">
       {!data ?
       <div className="flex justify-center pt-60">
@@ -170,15 +225,15 @@ export default function Home(props){
      <div>
     <div className="max-w-5xl  mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md  bg-gray-800">
         <img className="object-cover w-full h-64" src={profile} alt="Article"/>
-        <div style={{position: "absolute", top: "33%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-3xl font-semibold text-center text-gray-800 ">{data.name}</div>
-        <div style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-xl font-semibold text-center text-gray-600 ">{data.info}</div>
+        <div style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-3xl font-semibold text-center text-gray-800 ">{data.name}</div>
+        <div style={{position: "absolute", top: "47%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-xl font-semibold text-center text-gray-600 ">{data.info}</div>
     </div>
         <div  className="max-w-3xl my-4 mx-5 md:mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md  bg-gray-800">
         {!share?
         <div className="flex items-center p-6  space-x-4 rounded-md  bg-gray-800  text-white">
         <div className="flex items-center self-stretch justify-center">
           <div className="relative flex-shrink-0 px-2">
-                        <img src={uprofile} alt="" className="w-12 h-12 border rounded-full  bg-coolGray-500  border-coolGray-700"/>
+                        <img src={uprofile} alt="" className="w-12 h-12  rounded-full  bg-coolGray-500  border-coolGray-700"/>
                       </div>
         </div>
         <span className="text-gray-200  cursor-pointer hover:text-blue-600" onClick={()=>{setShare(!share)}}>Click here to post something to the class</span>
@@ -189,7 +244,7 @@ export default function Home(props){
                 <textarea
                 value={message}
                 onChange={(e)=>setMessage(e.target.value)}
-                 className="block w-full h-40 px-4 py-2 text-gray-700 bg-white border rounded-md  bg-gray-800  text-gray-300  border-gray-600 focus:border-blue-400  focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"></textarea>
+                 className="block w-full h-40 px-4 py-2 text-gray-700 border rounded-md  bg-gray-800  text-gray-300  border-gray-600 focus:border-blue-400  focus:border-blue-300 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-40"></textarea>
                 <fieldset className="w-full mx-auto space-y-1  text-coolGray-100">
                   
                   <div  style={{ marginLeft: "35%"}} className="flex mx-auto">
@@ -227,15 +282,35 @@ export default function Home(props){
         <div className="flex  items-center  margin-bg-white space-x-4">
         <div className="flex items-center self-stretch justify-center">
         <div className="relative flex-shrink-0 px-2">
-                        <img src={p.user.profile} alt="" className="w-12 h-12 border rounded-full  bg-coolGray-500  border-coolGray-700"/>
+                        <img src={p.user.profile} alt="" className="w-12 h-12  rounded-full  bg-coolGray-500  border-coolGray-700"/>
                       </div>
         </div>
-        <span className="text-white  cursor-pointer hover:text-blue-600" >{p.user.name}</span>
+        <span className="text-white text-lg" >{p.user.name}</span>
+        <span className="text-gray-300 " >{JSON.parse(p.createdAt)}</span>
         <br/>
       </div>
         <p className="py-2 px-16">{p.post}</p>
-        {p.media &&
-          <img className="object-cover w-full h-64 p-5" src={p.media} alt="Article"/>
+        {console.log(type(p.media))}
+        {type(p.media) == "image" &&
+        <div>
+          <img className="object-cover w-full h-64 p-5" src={p.media} alt="File"/>
+          <a  download="File" href={p.media} title="" >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 ml-14 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+          </svg>
+          </a>
+          </div>
+        }
+        {/* if not equl to image */}
+        {type(p.media) != "image" && p.media &&
+        <div className="flex">
+          <a className="flex hover:text-blue-600 hover:underline" download="File" href={p.media} title="" >
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 ml-14 mr-2 w-6 " fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+          </svg>
+          Download this file
+          </a>
+          </div>
         }
       </div>
       ))}
@@ -258,8 +333,44 @@ export default function Home(props){
     </div>
     
     }
+      </div> }
+
+
+
+      {/* all members view */}
+      { state === 2 &&
+      
+      <div style={{minHeight:"90vh"}} className="bg-gray-900">
+      <section className="py-6 bg-coolGray-800 text-coolGray-100">
+        <div className="container p-4 mx-auto space-y-16 sm:p-10">
+        
+        <div  className="space-y-4">
+              <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm bg-coolGray-500" src={data.teacher.profile}/>
+              <div className="flex flex-col items-center">
+                <h4 className="text-xl text-white font-semibold">{data.teacher.name}</h4>
+                <p className="text-sm text-gray-400">Teacher</p>
+              </div>
+            </div>
+            
+          <div className="grid w-full grid-cols-2 gap-x-6 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+          { data.members.map(p =>(
+            <div key={p} className="space-y-4">
+              <img alt="" className="object-cover h-56 mx-auto mb-4 bg-center rounded-sm bg-coolGray-500" src={p.profile}/>
+              <div className="flex flex-col items-center">
+                <h4 className="text-xl text-white font-semibold">{p.name}</h4>
+                <p className="text-sm text-gray-400 text-coolGray-400">Student</p>
+              </div>
+            </div>
+            ))}
+            
+          </div>
+          </div>
+      </section>
       </div>
+      }
+
     </Layout>
+
   )
 }
 

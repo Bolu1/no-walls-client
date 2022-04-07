@@ -73,7 +73,7 @@ const JoinClass: NextPage = () => {
             <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
               <div className="flex-1">
                 <div className="text-center">
-                  <h2 className="text-4xl font-bold text-center text-gray-700  text-white">
+                  <h2 className="text-4xl font-bold text-center text-white">
                     Join a class 
                   </h2>
                   {message == "Auth successsful" && (
@@ -102,7 +102,7 @@ const JoinClass: NextPage = () => {
                         type="text"
                         id="name"
                         placeholder="Class Id"
-                        className="block w-full px-4 py-2 mt-2  bg-gray-700  text-white  bg-white  rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 :focus:border-blue-300 focus:outline-none focus:ring"
+                        className="block w-full px-4 py-2 mt-2  text-white bg-gray-700 rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 :focus:border-blue-300 focus:outline-none focus:ring"
                       />
                     </div>
 
@@ -121,7 +121,7 @@ const JoinClass: NextPage = () => {
                         name="password"
                         id="password"
                         placeholder="Passsword"
-                        className="block w-full px-4 py-2 mt-2  bg-gray-700  text-white  bg-white  rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:border-blue-300 focus:outline-none focus:ring"
+                        className="block w-full px-4 py-2 mt-2  bg-gray-700  text-white rounded-md :bg-gray-800 :text-gray-300 :border-gray-600 focus:border-blue-400 focus:ring-blue-300 focus:ring-opacity-40 focus:border-blue-300 focus:outline-none focus:ring"
 
                       />
                     </div>

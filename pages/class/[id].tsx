@@ -308,12 +308,12 @@ export default function Home(props){
         </div>
      :
      <div>
-    <div className="max-w-5xl  mx-auto text-center overflow-hidden  rounded-lg shadow-md  bg-gray-800">
-        <img className="object-cover w-full h-64" src={profile} alt="Article"/>
-        <div style={{position: "absolute", top: "40%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-3xl font-semibold text-center text-gray-800 ">{data.name}</div>
-        <div style={{position: "absolute", top: "47%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-xl font-semibold text-center text-gray-600 ">{data.info}</div>
+    <div className="max-w-5xl  mx-auto text-center overflow-hidden bg-blend-darken rounded-lg shadow-md  bg-gray-800">
+        <img className="object-cover w-full h-64 bg-gray-900 bg-blend-darken" src={profile} alt="Article"/>
+        <div style={{position: "absolute", top: "40%", left: "50%",  transform: "translate(-50%, -50%)",  background: "rgba(0, 0, 0, 0.5)"}} className="text-3xl max-w-5xl  font-semibold text-center text-white ">{data.name}</div>
+        <div style={{position: "absolute", top: "47%", left: "50%", transform: "translate(-50%, -50%)", background: "rgba(0, 0, 0, 0.5)"}} className="text-xl font-semibold text-center text-white">{data.info}</div>
         {admin && 
-        <div style={{position: "absolute", top: "54%", left: "50%", transform: "translate(-50%, -50%)"}} className="text-xl font-semibold text-center text-gray-600 ">{data._id}</div>
+        <div style={{position: "absolute", top: "54%", left: "50%", transform: "translate(-50%, -50%)", background: "rgba(0, 0, 0, 0.5)"}} className="text-xl font-semibold text-center text-white ">{data._id}</div>
         }
         </div>
         <div  className="max-w-3xl my-4 mx-5 md:mx-auto text-center overflow-hidden bg-white rounded-lg shadow-md  bg-gray-800">

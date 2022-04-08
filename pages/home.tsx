@@ -66,7 +66,7 @@ const Home = () => {
       <div style={{minHeight:"90vh"}} className="bg-gray-900 px-5">
         {empty && 
 
-        <h2 className="text-4xl pt-60 font-bold text-center text-gray-700  text-white">
+        <h2 className="text-4xl pt-60 font-bold text-center text-white">
                    You do not have any classes yet 
                   </h2>
                   

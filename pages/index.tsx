@@ -67,7 +67,7 @@ const Home: NextPage = () => {
             <div className="flex items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
               <div className="flex-1">
                 <div className="text-center">
-                  <h2 className="text-4xl font-bold text-center text-gray-700  text-white">
+                  <h2 className="text-4xl font-bold text-center text-white">
                     Login to use <span className="text-blue-400">No walls</span>
                   </h2>
                   {message == "Auth successsful" && (
@@ -96,7 +96,7 @@ const Home: NextPage = () => {
                         type="email"
                         id="name"
                         placeholder="Email"
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400  border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-4 py-2 mt-2  placeholder-gray-400  border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900  text-gray-300  border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                     </div>
 
@@ -115,7 +115,7 @@ const Home: NextPage = () => {
                         name="password"
                         id="password"
                         placeholder="Passsword"
-                        className="block w-full px-4 py-2 mt-2 text-gray-700 placeholder-gray-400 border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900    border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
+                        className="block w-full px-4 py-2 mt-2  placeholder-gray-400 border border-gray-200 rounded-md  placeholder-gray-600  bg-gray-900    border-gray-700 focus:border-blue-400  focus:border-blue-400 focus:ring-blue-400 focus:outline-none focus:ring focus:ring-opacity-40"
                       />
                     </div>
                     

@@ -43,7 +43,7 @@ export default function SubmitAssignment(props){
       }
     `
     }
-    await  axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody),
+    await  axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody),
       {
         headers: {
             'Content-Type': 'application/json',

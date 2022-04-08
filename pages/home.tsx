@@ -42,7 +42,7 @@ const Home = () => {
     setLoading(true)
     let response: any
     const get = async(): Promise<void> =>{
-      const response = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody),
+      const response = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody),
       {
         headers: {
             'Content-Type': 'application/json',

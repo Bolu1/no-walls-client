@@ -50,7 +50,7 @@ export default function SubmitAssignment(props){
 
 
     const get = async(): Promise<void> =>{
-      const response1 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody1),
+      const response1 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody1),
       {
         headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ export default function SubmitAssignment(props){
       }
       `
     }
-    const response1 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody3),
+    const response1 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody3),
       {
         headers: {
             'Content-Type': 'application/json',

@@ -104,21 +104,21 @@ export default function Home(props){
       }
 
     const get = async(): Promise<void> =>{
-      const response = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody),
+      const response = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody),
       {
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${userInfo.token}`,
         }
       })
-      const response1 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody1),
+      const response1 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody1),
       {
         headers: {
             'Content-Type': 'application/json',
             authorization: `Bearer ${userInfo.token}`,
         }
       })
-    const response2 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody2),
+    const response2 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody2),
     {
       headers: {
           'Content-Type': 'application/json',
@@ -155,7 +155,7 @@ export default function Home(props){
     if(message.trim().length < 1){
       return
     }
-    const response = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody2),
+    const response = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody2),
       {
         headers: {
             'Content-Type': 'application/json',
@@ -183,7 +183,7 @@ export default function Home(props){
       }
       `
     }
-    const response1 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody3),
+    const response1 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody3),
       {
         headers: {
             'Content-Type': 'application/json',
@@ -233,7 +233,7 @@ export default function Home(props){
       }
       `
     }
-    const response1 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody3),
+    const response1 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody3),
       {
         headers: {
             'Content-Type': 'application/json',
@@ -241,7 +241,7 @@ export default function Home(props){
         }
       })
 
-      const response2 = await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody2),
+      const response2 = await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody2),
       {
         headers: {
             'Content-Type': 'application/json',

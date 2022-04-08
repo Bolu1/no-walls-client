@@ -36,7 +36,7 @@ const Home: NextPage = () => {
       setLoading(true)
       try{
       e.preventDefault()
-      const {data} =  await axios.post('http://localhost:8000/graphql', JSON.stringify(requestBody),{
+      const {data} =  await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody),{
         headers: {
           'Content-Type': 'application/json'
       }

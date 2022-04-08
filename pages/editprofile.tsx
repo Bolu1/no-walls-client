@@ -58,7 +58,7 @@ const EditProfile: NextPage = () => {
         setLoading(false)
         return
       }
-      const {data} =  await axios.post(' https://no-walls.herokuapp.com//graphql', JSON.stringify(requestBody),{
+      const {data} =  await axios.post('  https://no-walls.herokuapp.com/graphql', JSON.stringify(requestBody),{
         headers: {
           'Content-Type': 'application/json',
           authorization: `Bearer ${token}`

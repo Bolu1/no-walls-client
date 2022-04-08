@@ -66,7 +66,7 @@ const EditProfile: NextPage = () => {
       })
       console.log(data)
       if(data.data.editUser == null){
-        setMessage("Something went wrong")
+        setMessage("Something went wrong check your password")
         setLoading(false)
         return
       }

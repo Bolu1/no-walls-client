@@ -76,7 +76,7 @@ const Home = () => {
         <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin  border-violet-400"></div>
         </div>
      :
-     <div className="grid grid-cols-2 px-3 py-4 gap-y-10 sm:grid-cols-1 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+     <div className="grid grid-cols-1 px-3 py-4 gap-y-10 sm:grid-cols-1 gap-x-6 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
         {/* card */}
       { data && data.map((d)=>(
     <div key={d._id} onClick={() =>router.push(`/class/${d._id}`)} className="max-w-sm overflow-hidden cursor-pointer hover:shadow-2xl  rounded-lg shadow-md  bg-gray-800">

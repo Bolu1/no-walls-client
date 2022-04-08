@@ -327,7 +327,7 @@ export default function Home(props){
         <span className="text-gray-200  cursor-pointer hover:text-blue-600" onClick={()=>{setShare(!share)}}>Click here to post something to the class</span>
       </div>:
 
-       <div className="flex items-center p-6 mx-5 md:mx-auto space-x-4 rounded-md  bg-gray-800  text-white">
+       <div className="flex items-center p-6  md:mx-auto space-x-4 rounded-md  bg-gray-800  text-white">
        <div className="w-full mt-4">
                 <textarea
                 value={message}

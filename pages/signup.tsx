@@ -75,7 +75,7 @@ const SignUp: NextPage = () => {
   } 
 
   return (
-    <div className=" bg-gray-900">
+    <div style={{minHeight:"90vh"}} className=" bg-gray-900">
           <div className="flex justify-center h-screen">
             
 

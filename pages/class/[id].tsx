@@ -579,7 +579,7 @@ export default function Home(props){
       {!loading && posts[0] &&
       <div className="flex justify-center py-12">
       <div className="inline-flex items-center mx-auto rounded  bg-gray-800  text-white ">
-        <button type="button" onClick={morePostHandler} className="px-4 py-3">More posts</button>
+        <button type="button" onClick={morePostHandler} className="px-4 py-3">More </button>
         <button type="button" title="Toggle dropdown" className="p-3">
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-5 h-5">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path>

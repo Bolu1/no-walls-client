@@ -8,30 +8,29 @@ import FileBase from "react-file-base64";
 import dynamic from "next/dynamic";
 
 const Newquestion = () => {
-  
   const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [name, setname] = useState("");
   const [password, setpassword] = useState("");
-  const [image, setImage] = useState("")
+  const [image, setImage] = useState("");
   const [token, setToken] = useState("");
   const [info, setInfo] = useState("");
   const [description, setDescription] = useState("");
   if (!Cookies.get("user")) {
     router.push("/");
   }
-  var userInfo
- if(Cookies.get('user')){
-    const data = JSON.parse(Cookies.get('user'))
+  var userInfo;
+  if (Cookies.get("user")) {
+    const data = JSON.parse(Cookies.get("user"));
     // const n = data.email.split("@")
-    userInfo = data
- }
+    userInfo = data;
+  }
   const submitHandler = async (e): Promise<void> => {
-    e.preventDefault()
-    try{
-    setLoading(true);
-    const requestBody = {
-      query:`
+    e.preventDefault();
+    try {
+      setLoading(true);
+      const requestBody = {
+        query: `
       mutation{
           createClass(classInput: 
             {
@@ -47,21 +46,23 @@ const Newquestion = () => {
               name
           }
       }
-    `
-    }
-    await  axios.post('  https://no-walls.herokuapp.com/graphql', JSON.stringify(requestBody),
-      {
-        headers: {
-            'Content-Type': 'application/json',
+    `,
+      };
+      await axios.post(
+        "  https://nowalls-server.onrender.com/graphql",
+        JSON.stringify(requestBody),
+        {
+          headers: {
+            "Content-Type": "application/json",
             authorization: `Bearer ${userInfo.token}`,
+          },
         }
-      })
-    setLoading(false)
-    router.push("/home")
-  }
-    catch(error){
-      console.log(error)
-      setLoading(false)
+      );
+      setLoading(false);
+      router.push("/home");
+    } catch (error) {
+      console.log(error);
+      setLoading(false);
     }
   };
 
@@ -69,11 +70,11 @@ const Newquestion = () => {
     const data = JSON.parse(Cookies.get("user"));
   }, []);
 
-  const setI = (i) =>{
-      //  console.log(i)
-      const im = JSON.stringify(i.base64)
-      setImage(i.base64)
-  }
+  const setI = (i) => {
+    //  console.log(i)
+    const im = JSON.stringify(i.base64);
+    setImage(i.base64);
+  };
 
   return (
     <div className="bg-gray-900 text-coolGray-100">
@@ -83,7 +84,7 @@ const Newquestion = () => {
             Create a new Class
           </h2>
 
-          <form className="mt-6 " onSubmit={(e)=>submitHandler(e)}>
+          <form className="mt-6 " onSubmit={(e) => submitHandler(e)}>
             <div className="items-center -mx-2 md:flex">
               <div className="w-full mx-2 mt-4 md:mt-0">
                 <label className="block mb-2 text-sm font-medium text-gray-600 text-gray-200">
@@ -136,32 +137,32 @@ const Newquestion = () => {
             </div>
 
             <fieldset className="w-full space-y-1  pt-4 text-coolGray-100">
-                <label  className="block text-sm text-white font-medium">
-                  Upload Profile Photo
-                </label>
-                <div className="flex text-white px-8 py-12 border-2 border-dashed rounded-md border-coolGray-700 text-coolGray-400 bg-coolGray-800">
-                  {/* <input type="file" name="files" id="files" className="px-8 py-12 border-2 border-dashed rounded-md border-coolGray-700 text-coolGray-400 bg-coolGray-800"/> */}
-                  <FileBase
-                    type="file"
-                    multiple={false}
-                    onDone={({ base64 }) => setI({ base64 })}
-                  />
-                </div>
-              </fieldset>
+              <label className="block text-sm text-white font-medium">
+                Upload Profile Photo
+              </label>
+              <div className="flex text-white px-8 py-12 border-2 border-dashed rounded-md border-coolGray-700 text-coolGray-400 bg-coolGray-800">
+                {/* <input type="file" name="files" id="files" className="px-8 py-12 border-2 border-dashed rounded-md border-coolGray-700 text-coolGray-400 bg-coolGray-800"/> */}
+                <FileBase
+                  type="file"
+                  multiple={false}
+                  onDone={({ base64 }) => setI({ base64 })}
+                />
+              </div>
+            </fieldset>
 
             <div className="flex justify-center mt-6">
-              {!loading?
-                      <button
-                      type="submit"
-                      className="px-4 py-2 text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-blue-700"
-                    >
-                      Submit
-                    </button>:
-
-                      <div className="flex justify-center ">
-                      <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-400"></div>
-                      </div>
-                        }
+              {!loading ? (
+                <button
+                  type="submit"
+                  className="px-4 py-2 text-white transition-colors duration-200 transform bg-blue-600 rounded-md hover:bg-gray-600 focus:outline-none focus:bg-blue-700"
+                >
+                  Submit
+                </button>
+              ) : (
+                <div className="flex justify-center ">
+                  <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-violet-400"></div>
+                </div>
+              )}
             </div>
           </form>
         </section>
